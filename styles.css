@@ -1,4 +1,6 @@
-body {
+html, body {
+    overflow-x: hidden;
+}body {
     margin: 0;
     padding: 0;
     font-family: 'Playfair Display', serif;
@@ -68,6 +70,7 @@ nav ul li a {
 
 .hero span {
     color: #ffcc66;
+    
 }
 
 .hero p {
@@ -481,8 +484,9 @@ li {
 }
 
 .thank-you img {
-    width: 1520px;
-    height: 400px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -506,4 +510,278 @@ li {
     width: 24px; /* Adjust icon size */
     height: auto;
     border-radius: 50%;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets (1024px and below) */
+@media screen and (max-width: 1024px) {
+
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-left, .about-right {
+        width: 100%;
+    }
+
+    .profile-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .experience-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .experience-left, .experience-right {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .language-list {
+        gap: 40px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE NAVBAR */
+@media screen and (max-width: 768px) {
+
+     header {
+        flex-direction: row; /* IMPORTANT */
+    }
+
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #3A5A3A;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+}
+
+
+/* Mobile Devices (768px and below) */
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        
+        padding: 15px 20px;
+    
+    }
+
+    .experience-container {
+        padding: 0px;
+    }
+
+   
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-left h1 {
+        font-size: 30px;
+    }
+
+    .about-left p {
+        font-size: 15px;
+    }
+
+    .profile-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .contact-box {
+        width: 90%;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .job h3 {
+        font-size: 18px;
+    }
+
+    .job p {
+        font-size: 14px;
+    }
+
+    /* TABLE → SCROLLABLE (IMPORTANT FIX) */
+    .research-table {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 700px; /* allow scroll instead of breaking */
+    }
+
+    th, td {
+        font-size: 13px;
+    }
+
+    td ul li {
+        font-size: 13px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .thank-you img {
+        width: 10%;
+        height: auto;
+    }
+}
+
+
+/* Small Mobile (480px and below) */
+@media screen and (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .about-left h1 {
+        font-size: 24px;
+    }
+
+    .about-left p {
+        font-size: 14px;
+    }
+
+    .profile-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .contact-box h2 {
+        font-size: 16px;
+    }
+
+    .contact-box p {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    td a {
+        font-size: 12px;
+    }
 }
