@@ -212,7 +212,7 @@ html {
 /* Work Experience Section */
 #experience {
     background-color: #3A5A3A;
-    padding: 50px 80px;
+    padding: 50px 20px;
     color: white;
     text-align: center;
 }
@@ -229,8 +229,9 @@ html {
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: auto;
+    padding: 40px;
 }
 
 .experience-container a.certificate {
@@ -400,63 +401,134 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* ===== TABLE STYLE ===== */
+
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #2C4D2C; /* Slightly Lighter Green */
-    color: #FFF;
-    border-radius: 10px;
+    background-color: #2C4D2C; /* light cream background like image */
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #1f1f1f;
+    border-radius: 6px;
     overflow: hidden;
 }
 
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #FFF;
-}
-
+/* HEADER */
 th {
-    background-color: #355E3B; /* Darker Green */
-    color: #FFD700; /* Gold */
-    font-weight: bold;
-}
-th:nth-child(2), td:nth-child(2) {
-    width: 20%; /* Reduced width for "Research Topic" column */
-}
-
-th:nth-child(3), td:nth-child(3) {
-    width: 15%; /* Adjusted width for "Presented At" */
+    background-color: #355E3B;/* keep green */
+    color: #f6e6b4;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 22px 18px;
+    text-align: left;
+    border-bottom: none;
+    letter-spacing: 0.3px;
 }
 
-th:nth-child(4), td:nth-child(4) {
-    width: 40%; /* More space for "Description" */
-}
-
-th:nth-child(5), td:nth-child(5) {
-    width: 25%; /* Media section */
-}
-
-td ul {
-    padding-left: 20px;
-    list-style: none;
-}
-
-td ul li {
-    margin-bottom: 5px;
+/* TABLE DATA */
+td {
+    padding: 18px 18px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd6cc;
     font-size: 16px;
+    line-height: 1.7;
+    color: #f0f0f0;
+    
 }
 
+/* COLUMN WIDTHS */
+th:nth-child(1),
+td:nth-child(1) {
+    width: 4%;
+    text-align: center;
+    font-size: 20px;
+}
 
+th:nth-child(2),
+td:nth-child(2) {
+    width: 22%;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 18%;
+    line-height: 1.6;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 41%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    width: 15%;
+}
+
+/* VENUE DATE */
+.venue {
+    margin-top: 8px;
+    font-style: italic;
+    color: #8d8d8d;
+    font-size: 15px;
+}
+
+/* LINKS */
 td a {
-    display: block;  /* Ensures each link appears on a new line */
-    color: #FFD700; /* Gold for Link */
+    display: inline-block;
+    color: #d29f52;
     text-decoration: none;
-    font-weight: bold;
-    margin-bottom: 5px; /* Adds spacing between links */
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.8;
+    transition: 0.3s ease;
 }
 
 td a:hover {
+    color: #de8a0b;
     text-decoration: underline;
+}
+
+/* ROW HOVER */
+tr:hover td {
+    background: #2C4D2C;
+    transition: 0.3s ease;
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        border: 1px solid #d8d2c8;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    td {
+        border-bottom: 1px solid #ddd;
+        padding: 14px;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
 }
 
 
@@ -708,17 +780,71 @@ li {
         overflow-x: auto;
     }
 
-    table {
-        width: 700px; /* allow scroll instead of breaking */
+    /* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+/* =========================
+   MOBILE SCROLLABLE TABLE
+========================= */
+
+@media (max-width: 768px){
+
+    .table-container{
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 10px;
     }
 
-    th, td {
-        font-size: 13px;
+    table{
+        min-width: 1000px; /* enables horizontal scroll */
+        width: 100%;
     }
 
-    td ul li {
+    thead{
+        display: table-header-group;
+    }
+
+    tbody{
+        display: table-row-group;
+    }
+
+    tr{
+        display: table-row;
+        background: #2C4D2C;
+    }
+
+    th,
+    td{
+        display: table-cell;
+        white-space: normal;
+        vertical-align: top;
+    }
+
+    th{
+        font-size: 15px;
+        padding: 16px;
+    }
+
+    td{
+        font-size: 14px;
+        padding: 16px;
+        line-height: 1.6;
+    }
+
+    td::before{
+        display: none; /* removes stacked mobile labels */
+    }
+
+    td a{
+        font-size: 14px;
+    }
+
+    .venue{
         font-size: 13px;
     }
+}
 
     .contact-info {
         flex-direction: column;
